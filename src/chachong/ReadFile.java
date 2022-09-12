@@ -3,6 +3,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
@@ -41,5 +43,20 @@ public class ReadFile {
         System.out.println(result.toString());
 		return result.toString();
 		
+	}
+	public static void write(double number)
+	{
+		String str = Double.toString(number);
+		String path = "D:/Study/eclipse/eclipse-workspace/ChaChong/testtxt/number.txt";
+		File file = new File(path);
+		try {
+			FileWriter fileWriter = new FileWriter(file, true);
+            fileWriter.write(str, 0, (str.length() > 3 ? 4 : str.length()));
+            fileWriter.write("\r\n");
+            // ¹Ø±Õ×ÊÔ´
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 }
