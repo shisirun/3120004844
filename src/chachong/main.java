@@ -6,7 +6,8 @@ public class main {
 		String str1=ReadFile.read();
 	    //int i=54;
 	    //ReadFile.write(i);
-	    SimHash.GetSimHash(str0);
-	    SimHash.GetSimHash(str1);
+	    String str2=SimHash.GetSimHash(str0);
+	    String str3=SimHash.GetSimHash(str1);
+	    SimHash.haiming(str2, str3);
 	}
 }
