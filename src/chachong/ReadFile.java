@@ -9,11 +9,11 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class ReadFile {
-	public static String read() {
+	public static String read(String path) {
 		Scanner sc = new Scanner(System.in);
 		//String path = null;
-		System.out.println("输入路径:");
-		String path = sc.next();
+		//System.out.println("输入路径:");
+		//String path = sc.next();
 		File file = new File(path);
 		if(path==null)
 		{
@@ -40,14 +40,14 @@ public class ReadFile {
         }catch (Exception e){
             e.printStackTrace();
         }
-        System.out.println(result.toString());
+        //System.out.println(result.toString());
 		return result.toString();
 		
 	}
-	public static void write(double number)
+	public static void write(double number,String path)
 	{
 		String str = Double.toString(number);
-		String path = "D:/Study/eclipse/eclipse-workspace/ChaChong/testtxt/number.txt";
+		//String path = "D:/Study/eclipse/eclipse-workspace/ChaChong/testtxt/number.txt";
 		File file = new File(path);
 		try {
 			FileWriter fileWriter = new FileWriter(file, true);

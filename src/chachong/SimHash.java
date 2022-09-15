@@ -58,13 +58,12 @@ public class SimHash {
             i++;
 	     }
         String Simhash="";
-        for(int j=0;j<128;j++)
+        for(int j=0;j<128;j++)//这一位大于0就赋1
         {
         	if(m[j]<=0)
         		Simhash+='0';
         	else Simhash+='1';
         }
-        System.out.println("哈希:"+Simhash);
         return Simhash;
 	}
 	public static double haiming(String a,String b){
@@ -74,9 +73,6 @@ public class SimHash {
 			if(a.charAt(i)!=b.charAt(i))
 				m++;
 		}
-		System.out.println("海明距离:"+m);
-		System.out.println("相似度:"+(1 - m / 128));
-
-	    return 0.01 * (100 - m * 100 / 128);
+	    return (1 - m / 128);
 	}
 }
